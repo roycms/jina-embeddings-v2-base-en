@@ -2628,7 +2628,7 @@ The model is further trained on Jina AI's collection of more than 400 millions o
 These pairs were obtained from various domains and were carefully selected through a thorough cleaning process.
 
 The embedding model was trained using 512 sequence length, but extrapolates to 8k sequence length (or even longer) thanks to ALiBi.
-This makes our model useful for a range of use cases, especially when processing long documents is needed, including long document retrieval, semantic textual similarity, text reranking, recommendation, RAG and LLM-based generative search,...
+This makes our model useful for a range of use cases, especially when processing long documents is needed, including long document retrieval, semantic textual similarity, text reranking, recommendation, RAG and LLM-based generative search, etc.
 
 With a standard size of 137 million parameters, the model enables fast inference while delivering better performance than our small model. It is recommended to use a single GPU for inference.
 Additionally, we provide the following embedding models:
