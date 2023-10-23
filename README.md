@@ -2674,6 +2674,8 @@ embeddings = model.encode(
 )
 ```
 
+*Alternatively, you can use Jina AI's Embeddings platform for fully-managed access to Jina Embeddings models (Coming soon!)*.
+
 ## Fine-tuning
 
 Please consider [Finetuner](https://github.com/jina-ai/finetuner).
