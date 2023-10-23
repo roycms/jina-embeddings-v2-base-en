@@ -2622,7 +2622,7 @@ model-index:
 ## Intended Usage & Model Info
 
 `jina-embedding-b-en-v2` is an English, monolingual **embedding model** supporting **8192 sequence length**.
-It is based on a Bert architecture (Jina Bert) that supports the symmetric bidirectional variant of [ALiBi](https://arxiv.org/abs/2108.12409) to support longer sequence length.
+It is based on a Bert architecture (JinaBert) that supports the symmetric bidirectional variant of [ALiBi](https://arxiv.org/abs/2108.12409) to allow longer sequence length.
 The backbone `jina-bert-b-en-v2` is pretrained on the C4 dataset.
 The model is further trained on Jina AI's collection of more than 400 millions of sentence pairs and hard negatives.
 These pairs were obtained from various domains and were carefully selected through a thorough cleaning process.
@@ -2631,18 +2631,18 @@ The embedding model was trained using 512 sequence length, but extrapolates to 8
 This makes our model useful for a range of use cases, especially when processing long documents is needed, including long document retrieval, semantic textual similarity, text reranking, recommendation, RAG and LLM-based generative search,...
 
 With a standard size of 137 million parameters, the model enables fast inference while delivering better performance than our small model. It is recommended to use a single GPU for inference.
-Additionally, we provide the following embedding models, supporting 8k sequence length as well:
+Additionally, we provide the following embedding models:
 
-### V1 (Based on T5)
+### V1 (Based on T5, 512 Seq)
 
 - [`jina-embedding-s-en-v1`](https://huggingface.co/jinaai/jina-embedding-s-en-v1): 35 million parameters.
 - [`jina-embedding-b-en-v1`](https://huggingface.co/jinaai/jina-embedding-b-en-v1): 110 million parameters.
 - [`jina-embedding-l-en-v1`](https://huggingface.co/jinaai/jina-embedding-l-en-v1): 330 million parameters.
 
-### V2 (Based on JinaBert)
+### V2 (Based on JinaBert, 8k Seq)
 
-- [`jina-embedding-s-en-v2`](https://huggingface.co/jinaai/jina-embedding-s-en-v2): 33 million parameters.
-- [`jina-embedding-b-en-v2`](https://huggingface.co/jinaai/jina-embedding-b-en-v2): 137 million parameters **(you are here)**.
+- [`jina-embedding-s-en-v2`](https://huggingface.co/jinaai/jina-embedding-s-en-v2): 33 million parameters **(you are here)**.
+- [`jina-embedding-b-en-v2`](https://huggingface.co/jinaai/jina-embedding-b-en-v2): 137 million parameters.
 - [`jina-embedding-l-en-v2`](https://huggingface.co/jinaai/jina-embedding-l-en-v2): 435 million parameters.
 
 ## Data & Parameters
