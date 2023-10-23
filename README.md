@@ -2633,13 +2633,13 @@ This makes our model useful for a range of use cases, especially when processing
 With a standard size of 137 million parameters, the model enables fast inference while delivering better performance than our small model. It is recommended to use a single GPU for inference.
 Additionally, we provide the following embedding models:
 
-**V1 (Based on T5, 512 Seq)**
+*V1 (Based on T5, 512 Seq)*
 
 - [`jina-embeddings-v1-small-en`](https://huggingface.co/jinaai/jina-embedding-s-en-v1): 35 million parameters.
 - [`jina-embeddings-v1-base-en`](https://huggingface.co/jinaai/jina-embedding-b-en-v1): 110 million parameters.
 - [`jina-embeddings-v2-large-en`](https://huggingface.co/jinaai/jina-embedding-l-en-v1): 330 million parameters.
 
-**V2 (Based on JinaBert, 8k Seq)**
+*V2 (Based on JinaBert, 8k Seq)*
 
 - [`jina-embeddings-v2-small-en`](https://huggingface.co/jinaai/jina-embeddings-v2-small-en): 33 million parameters **(you are here)**.
 - [`jina-embeddings-v2-base-en`](https://huggingface.co/jinaai/jina-embeddings-v2-base-en): 137 million parameters.
