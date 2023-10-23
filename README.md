@@ -2647,9 +2647,9 @@ Additionally, we provide the following embedding models:
 
 ## Data & Parameters
 
-Jina Embedding V2 technical report coming soon.
+Jina Embeddings V2 technical report coming soon.
 
-Jina Embedding V1 [technical report](https://arxiv.org/abs/2307.11224).
+Jina Embeddings V1 [technical report](https://arxiv.org/abs/2307.11224).
 
 ## Usage
 
