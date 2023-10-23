@@ -2622,31 +2622,35 @@ model-index:
 
 ## Intended Usage & Model Info
 
-`jina-embedding-b-en-v2` is an English, monolingual embedding model supporting 8k sequence length.
-It is based on a Bert architecture that supports the symmetric bidirectional variant of ALiBi to support longer sequence length.
-The backbone Jina Bert Small model is pretrained on the C4 dataset.
-The model is further trained on Jina AI's collection of more than 40 datasets of sentence pairs and hard negatives.
+`jina-embedding-b-en-v2` is an English, monolingual **embedding model** supporting **8192 sequence length**.
+It is based on a Bert architecture (Jina Bert) that supports the symmetric bidirectional variant of [ALiBi](https://arxiv.org/abs/2108.12409) to support longer sequence length.
+The backbone `jina-bert-b-en-v2` is pretrained on the C4 dataset.
+The model is further trained on Jina AI's collection of more than 400 millions of sentence pairs and hard negatives.
 These pairs were obtained from various domains and were carefully selected through a thorough cleaning process.
 
-The embedding model was trained using 512 sequence length, but extrapolates to 8k sequence length thanks to ALiBi.
+The embedding model was trained using 512 sequence length, but extrapolates to 8k sequence length (or even longer) thanks to ALiBi.
 This makes our model useful for a range of use cases, especially when processing long documents is needed, including long document retrieval, semantic textual similarity, text reranking, recommendation, RAG and LLM-based generative search,...
 
-This model has 33 million parameters, which enables lightning-fast and memory efficient inference on long documents, while still delivering impressive performance.
+With a standard size of 137 million parameters, the model enables fast inference while delivering better performance than our small model. It is recommended to use a single GPU for inference.
 Additionally, we provide the following embedding models, supporting 8k sequence length as well:
+
+### V1 (Based on T5)
+
+- [`jina-embedding-s-en-v1`](https://huggingface.co/jinaai/jina-embedding-s-en-v1): 35 million parameters.
+- [`jina-embedding-b-en-v1`](https://huggingface.co/jinaai/jina-embedding-b-en-v1): 110 million parameters.
+- [`jina-embedding-l-en-v1`](https://huggingface.co/jinaai/jina-embedding-l-en-v1): 330 million parameters.
+
+### V2 (Based on JinaBert)
 
 - [`jina-embedding-s-en-v2`](https://huggingface.co/jinaai/jina-embedding-s-en-v2): 33 million parameters.
 - [`jina-embedding-b-en-v2`](https://huggingface.co/jinaai/jina-embedding-b-en-v2): 137 million parameters **(you are here)**.
 - [`jina-embedding-l-en-v2`](https://huggingface.co/jinaai/jina-embedding-l-en-v2): 435 million parameters.
 
 ## Data & Parameters
-<!-- TODO: update the paper ID once it is published on arxiv -->
-Please checkout our [technical blog](https://arxiv.org/abs/2307.11224).
 
-## Metrics
+Jina Embedding V2 technical report coming soon.
 
-We compared the model against `all-minilm-l6-v2`/`all-mpnet-base-v2` from sbert and `text-embeddings-ada-002` from OpenAI:
-
-<!-- TODO: add evaluation table here -->
+Jina Embedding V1 [technical report](https://arxiv.org/abs/2307.11224).
 
 ## Usage
 
@@ -2662,20 +2666,13 @@ embeddings = model.encode(['How is the weather today?', 'What is the current wea
 print(cos_sim(embeddings[0], embeddings[1]))
 ```
 
-For long sequences, it's recommended to perform inference using Flash Attention. Using Flash Attention allows you to increase the batch size and throughput for long sequence length.
-We include an experimental implementation for Flash Attention, shipped with the model.
-Install the following triton version: 
-`pip install triton==2.0.0.dev20221202`.
-Now run the same code above, but make sure to set the parameter `with_flash` to `True` when you load the model. You also have to use either `fp16` or `bf16`:
-```python
-from transformers import AutoModel
-from numpy.linalg import norm
-import torch
+If you only want to handle shorter sequence, such as 2k, pass the `max_length` parameter to the `encode` function:
 
-cos_sim = lambda a,b: (a @ b.T) / (norm(a)*norm(b))
-model = AutoModel.from_pretrained('jinaai/jina-embedding-b-en-v2', trust_remote_code=True, with_flash=True, torch_dtype=torch.float16).cuda() # trust_remote_code is needed to use the encode method
-embeddings = model.encode(['How is the weather today?', 'What is the current weather like today?'])
-print(cos_sim(embeddings[0], embeddings[1]))
+```python
+embeddings = model.encode(
+    ['Very long ... document'],
+    max_length=2048
+)
 ```
 
 ## Fine-tuning
@@ -2683,7 +2680,8 @@ print(cos_sim(embeddings[0], embeddings[1]))
 Please consider [Finetuner](https://github.com/jina-ai/finetuner).
 
 ## Plans
-The development of new multilingual models is currently underway. We will be targeting mainly the German and Spanish languages. The upcoming models will be called `jina-embedding-s/b/l-de/es-v2`.
+
+The development of new bilingual models is currently underway. We will be targeting mainly the German and Spanish languages. The upcoming models will be called `jina-embedding-b-de/es-v2`.
 
 ## Contact
 
