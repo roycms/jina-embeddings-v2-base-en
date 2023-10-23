@@ -2621,9 +2621,9 @@ model-index:
 
 ## Intended Usage & Model Info
 
-`jina-embedding-b-en-v2` is an English, monolingual **embedding model** supporting **8192 sequence length**.
+`jina-embeddings-v2-base-en` is an English, monolingual **embedding model** supporting **8192 sequence length**.
 It is based on a Bert architecture (JinaBert) that supports the symmetric bidirectional variant of [ALiBi](https://arxiv.org/abs/2108.12409) to allow longer sequence length.
-The backbone `jina-bert-b-en-v2` is pretrained on the C4 dataset.
+The backbone `jina-bert-v2-base-en` is pretrained on the C4 dataset.
 The model is further trained on Jina AI's collection of more than 400 millions of sentence pairs and hard negatives.
 These pairs were obtained from various domains and were carefully selected through a thorough cleaning process.
 
@@ -2635,15 +2635,15 @@ Additionally, we provide the following embedding models:
 
 ### V1 (Based on T5, 512 Seq)
 
-- [`jina-embedding-s-en-v1`](https://huggingface.co/jinaai/jina-embedding-s-en-v1): 35 million parameters.
-- [`jina-embedding-b-en-v1`](https://huggingface.co/jinaai/jina-embedding-b-en-v1): 110 million parameters.
-- [`jina-embedding-l-en-v1`](https://huggingface.co/jinaai/jina-embedding-l-en-v1): 330 million parameters.
+- [`jina-embeddings-v1-small-en`](https://huggingface.co/jinaai/jina-embedding-s-en-v1): 35 million parameters.
+- [`jina-embeddings-v1-base-en`](https://huggingface.co/jinaai/jina-embedding-b-en-v1): 110 million parameters.
+- [`jina-embeddings-v2-large-en`](https://huggingface.co/jinaai/jina-embedding-l-en-v1): 330 million parameters.
 
 ### V2 (Based on JinaBert, 8k Seq)
 
-- [`jina-embedding-s-en-v2`](https://huggingface.co/jinaai/jina-embedding-s-en-v2): 33 million parameters **(you are here)**.
-- [`jina-embedding-b-en-v2`](https://huggingface.co/jinaai/jina-embedding-b-en-v2): 137 million parameters.
-- [`jina-embedding-l-en-v2`]: 435 million parameters (releasing soon).
+- [`jina-embeddings-v2-small-en`](https://huggingface.co/jinaai/jina-embeddings-v2-small-en): 33 million parameters **(you are here)**.
+- [`jina-embeddings-v2-base-en`](https://huggingface.co/jinaai/jina-embeddings-v2-base-en): 137 million parameters.
+- [`jina-embeddings-v2-large-en`](): 435 million parameters (releasing soon).
 
 ## Data & Parameters
 
@@ -2660,7 +2660,7 @@ from transformers import AutoModel
 from numpy.linalg import norm
 
 cos_sim = lambda a,b: (a @ b.T) / (norm(a)*norm(b))
-model = AutoModel.from_pretrained('jinaai/jina-embedding-b-en-v2', trust_remote_code=True) # trust_remote_code is needed to use the encode method
+model = AutoModel.from_pretrained('jinaai/jina-embeddings-v2-base-en', trust_remote_code=True) # trust_remote_code is needed to use the encode method
 embeddings = model.encode(['How is the weather today?', 'What is the current weather like today?'])
 print(cos_sim(embeddings[0], embeddings[1]))
 ```
