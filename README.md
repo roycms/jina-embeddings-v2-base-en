@@ -2682,7 +2682,8 @@ Please consider [Finetuner](https://github.com/jina-ai/finetuner).
 
 ## Plans
 
-The development of new bilingual models is currently underway. We will be targeting mainly the German and Spanish languages. The upcoming models will be called `jina-embedding-b-de/es-v2`.
+The development of new bilingual models is currently underway. We will be targeting mainly the German and Spanish languages.
+The upcoming models will be called `jina-embeddings-v2-base-de/es`.
 
 ## Contact
 
