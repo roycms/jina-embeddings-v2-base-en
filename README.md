@@ -2633,13 +2633,13 @@ This makes our model useful for a range of use cases, especially when processing
 With a standard size of 137 million parameters, the model enables fast inference while delivering better performance than our small model. It is recommended to use a single GPU for inference.
 Additionally, we provide the following embedding models:
 
-*V1 (Based on T5, 512 Seq)*
+**V1 (Based on T5, 512 Seq)**
 
 - [`jina-embeddings-v1-small-en`](https://huggingface.co/jinaai/jina-embedding-s-en-v1): 35 million parameters.
 - [`jina-embeddings-v1-base-en`](https://huggingface.co/jinaai/jina-embedding-b-en-v1): 110 million parameters.
 - [`jina-embeddings-v2-large-en`](https://huggingface.co/jinaai/jina-embedding-l-en-v1): 330 million parameters.
 
-*V2 (Based on JinaBert, 8k Seq)*
+**V2 (Based on JinaBert, 8k Seq)**
 
 - [`jina-embeddings-v2-small-en`](https://huggingface.co/jinaai/jina-embeddings-v2-small-en): 33 million parameters **(you are here)**.
 - [`jina-embeddings-v2-base-en`](https://huggingface.co/jinaai/jina-embeddings-v2-base-en): 137 million parameters.
@@ -2699,6 +2699,15 @@ If you find Jina Embeddings useful in your research, please cite the following p
       title={Beyond the 512-Token Barrier: Training General-Purpose Text
 Embeddings for Large Documents}, 
       author={Michael Günther and Jackmin Ong and Isabelle Mohr and Alaeddine Abdessalem and Tanguy Abel and Mohammad Kalim Akram and Susana Guzman and Georgios Mastrapas and Saba Sturua and Bo Wang},
+      year={2023},
+      eprint={2307.11224},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+
+@misc{günther2023jina,
+      title={Jina Embeddings: A Novel Set of High-Performance Sentence Embedding Models}, 
+      author={Michael Günther and Louis Milliken and Jonathan Geuter and Georgios Mastrapas and Bo Wang and Han Xiao},
       year={2023},
       eprint={2307.11224},
       archivePrefix={arXiv},
