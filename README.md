@@ -1,5 +1,4 @@
 ---
-pipeline_tag: sentence-similarity
 tags:
   - finetuner
   - mteb
