@@ -2643,7 +2643,7 @@ Additionally, we provide the following embedding models:
 
 - [`jina-embedding-s-en-v2`](https://huggingface.co/jinaai/jina-embedding-s-en-v2): 33 million parameters **(you are here)**.
 - [`jina-embedding-b-en-v2`](https://huggingface.co/jinaai/jina-embedding-b-en-v2): 137 million parameters.
-- [`jina-embedding-l-en-v2`](https://huggingface.co/jinaai/jina-embedding-l-en-v2): 435 million parameters.
+- [`jina-embedding-l-en-v2`]: 435 million parameters (releasing soon).
 
 ## Data & Parameters
 
