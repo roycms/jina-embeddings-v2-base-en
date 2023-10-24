@@ -2693,7 +2693,10 @@ Join our [Discord community](https://discord.jina.ai) and chat with other commun
 
 If you find Jina Embeddings useful in your research, please cite the following paper:
 
+Coming soon.
+
 <!-- TODO: update the paper ID once it is published on arxiv -->
+<!--
 ``` latex
 @misc{günther2023jina,
       title={Beyond the 512-Token Barrier: Training General-Purpose Text
@@ -2714,3 +2717,4 @@ Embeddings for Large Documents},
       primaryClass={cs.CL}
 }
 ```
+-->
