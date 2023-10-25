@@ -9,6 +9,7 @@ tags:
 datasets:
   - allenai/c4
 language: en
+inference: false
 license: apache-2.0
 model-index:
 - name: jina-embedding-b-en-v2
