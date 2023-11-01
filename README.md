@@ -2648,9 +2648,7 @@ Additionally, we provide the following embedding models:
 
 ## Data & Parameters
 
-Jina Embeddings V2 technical report coming soon.
-
-Jina Embeddings V1 [technical report](https://arxiv.org/abs/2307.11224).
+Jina Embeddings V2 [technical report](https://arxiv.org/abs/2310.19923)
 
 ## Usage
 
@@ -2694,9 +2692,17 @@ Join our [Discord community](https://discord.jina.ai) and chat with other commun
 
 If you find Jina Embeddings useful in your research, please cite the following paper:
 
-Coming soon.
+```
+@misc{günther2023jina,
+      title={Jina Embeddings 2: 8192-Token General-Purpose Text Embeddings for Long Documents}, 
+      author={Michael Günther and Jackmin Ong and Isabelle Mohr and Alaeddine Abdessalem and Tanguy Abel and Mohammad Kalim Akram and Susana Guzman and Georgios Mastrapas and Saba Sturua and Bo Wang and Maximilian Werk and Nan Wang and Han Xiao},
+      year={2023},
+      eprint={2310.19923},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
 
-<!-- TODO: update the paper ID once it is published on arxiv -->
 <!--
 ``` latex
 @misc{günther2023jina,
