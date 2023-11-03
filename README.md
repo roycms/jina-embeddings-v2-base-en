@@ -2673,7 +2673,7 @@ embeddings = model.encode(
 )
 ```
 
-*Alternatively, you can use Jina AI's Embedding platform for fully-managed access to Jina Embeddings models (Coming soon!)*.
+*Alternatively, you can use Jina AI's [Embedding platform](https://jina.ai/embeddings/) for fully-managed access to Jina Embeddings models*.
 
 ## Fine-tuning
 
